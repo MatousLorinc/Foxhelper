@@ -1,0 +1,169 @@
+﻿<Window x:Class="FoxHelper.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FoxHelper"
+        mc:Ignorable="d"
+        Title="FoxHelper" Height="900" Width="1600" WindowStyle="SingleBorderWindow">
+	<Window.Resources>
+		<Style x:Key="MenuIcon" TargetType="Image">
+			<Setter Property="Width" Value="48" />
+			<Setter Property="Margin" Value="8" />
+		</Style>
+		<Style x:Key="TabCanvas" TargetType="Grid">
+			<Setter Property="Background" Value="#FF252526" />
+		</Style>
+		<Style x:Key="MenuLabel" TargetType="Label"	>
+			<Setter Property="Foreground" Value="White" />
+			<Setter Property="FontWeight" Value="SemiBold" />
+			<Setter Property="FontSize" Value="16" />
+			<Setter Property="HorizontalAlignment" Value="Center" />
+		</Style>
+		<Style x:Key="TabCanvasWrapper" TargetType="StackPanel">
+		</Style>
+	</Window.Resources>
+	<Grid Background="#FF1A1A1A">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="1*" />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="1*" />
+			<RowDefinition Height="auto" />
+		</Grid.RowDefinitions>
+		<TabControl Background="#FF1E1E1E" BorderBrush="#FF3D3E3E">
+			<TabControl.Resources>
+				<Style TargetType="TabItem">
+					<Setter Property="Template">
+						<Setter.Value>
+							<ControlTemplate TargetType="TabItem">
+								<Border Name="Border" BorderThickness="1,1,1,0" BorderBrush="#FF686868" CornerRadius="0,0,0,0" Margin="0" >
+									<ContentPresenter x:Name="ContentSite"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        ContentSource="Header"
+                                        Margin="10,2"/>
+								</Border>
+								<ControlTemplate.Triggers>
+									<Trigger Property="IsSelected" Value="True">
+										<Setter TargetName="Border" Property="Background" Value="#FF686868" />
+									</Trigger>
+									<Trigger Property="IsSelected" Value="False">
+										<Setter TargetName="Border" Property="Background" Value="#FF3D3D3F" />
+									</Trigger>
+								</ControlTemplate.Triggers>
+							</ControlTemplate>
+						</Setter.Value>
+					</Setter>
+				</Style>
+			</TabControl.Resources>
+			<TabItem >
+				<TabItem.Header>
+					<StackPanel Style="{StaticResource TabCanvasWrapper}" >
+						<Image Style="{StaticResource MenuIcon}" Source="Images/info.png"/>
+						<Label Style="{StaticResource MenuLabel}" Content="INFO"></Label>
+					</StackPanel>
+				</TabItem.Header>
+				<StackPanel Margin="10,10,10,10">
+					<Label Content="CREDITS" FontSize="18" FontWeight="Bold" Foreground="#FFECECEC" />
+					<TextBlock x:Name="CreditsBlock" TextWrapping="WrapWithOverflow" FontSize="16" Foreground="#FFEEEEEE" HorizontalAlignment="Left" Margin="20,20,20,20">
+					credits
+					</TextBlock>
+				</StackPanel>
+			</TabItem>
+			<TabItem>
+				<TabItem.Header>
+					<StackPanel Style="{StaticResource TabCanvasWrapper}" >
+						<Image Style="{StaticResource MenuIcon}" Source="Images/click.png"/>
+						<Label Style="{StaticResource MenuLabel}" Content="AUTOCLICK"></Label>
+					</StackPanel>
+				</TabItem.Header>
+				<Grid Background="#FF1E1E1E">
+					<StackPanel Margin="10,10,10,10">
+						<Label Content="HOW TO USE" FontSize="18" FontWeight="Bold" Foreground="#FFECECEC" />
+						<Label x:Name="AutoclickerInstructions" Content="F5 = begin LEFT MB" HorizontalAlignment="Left" Margin="20,20,20,18" VerticalAlignment="Top" Height="396" Width="497" Foreground="#FFDFDFE1" FontSize="16"/>
+					</StackPanel>
+				</Grid>
+			</TabItem>
+			<TabItem>
+				<TabItem.Header>
+					<StackPanel Style="{StaticResource TabCanvasWrapper}" >
+						<Image Style="{StaticResource MenuIcon}" Source="Images/shockwave.png"/>
+						<Label Style="{StaticResource MenuLabel}" Content="DESTRUCTION"></Label>
+					</StackPanel>
+				</TabItem.Header>
+				<Grid Background="#FF1E1E1E">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="1*" />
+						<ColumnDefinition Width="1.15*" />
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="1*" />
+					</Grid.RowDefinitions>
+					<DataGrid Name="StructuresGrid" ItemsSource="{Binding}" AutoGenerateColumns="False" Grid.Row="2" FontSize="16" CellEditEnding="StructuresGrid_CellEditEnding" CurrentCellChanged="StructuresGrid_CurrentCellChanged" >
+						<DataGrid.Columns>
+							<DataGridTextColumn Header="Structure"  Binding="{Binding Name}" Width="150" IsReadOnly="True"/>
+							<DataGridTextColumn Header="Health"  Binding="{Binding Health}" Width="80"/>
+							<DataGridTextColumn Header="Integrity"  Binding="{Binding Integrity}" Width="80"/>
+							<DataGridTextColumn Header="Tier"  Binding="{Binding Tier}" Width="60"/>
+							<DataGridTextColumn Header="Bmat"  Binding="{Binding BmatCost}" Width="80"/>
+							<DataGridTextColumn Header="Concrete"  Binding="{Binding ConcreteCost}" Width="80"/>
+							<DataGridTextColumn Header="Count"  Binding="{Binding Count}" Width="60"/>
+						</DataGrid.Columns>
+					</DataGrid>
+					<Grid Grid.Column="1" Background="#FF1E1E1E">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="2*" />
+							<RowDefinition Height="5*" />
+						</Grid.RowDefinitions>
+						<StackPanel Margin="10,0,10,0">
+							<Label x:Name="WetnessLabel" Content="Wetness = 0h" Foreground="#FFBCD3EE" FontSize="14" />
+							<Slider x:Name="WetnessSlider" Margin="0,10,0,0" Width="300" HorizontalAlignment="Left" ValueChanged="WetnessSlider_ValueChanged" Maximum="24" Foreground="#FF1774D1" />
+							<Label x:Name="HealthLabel" Content="Structure health = 1000HP" Foreground="#FFFFA7A7" FontSize="14" />
+							<Label x:Name="EffectiveHealthLabel" Content="Structure health = 1000HP" Foreground="#FFFFA7A7" FontSize="14" />
+							<Label x:Name="EffectiveConcreteHealthLabel" Content="Structure health = 1000HP" Foreground="#FFFFA7A7" FontSize="14" />
+							<Label x:Name="IntegrityLabel" Content="Structural integrity = 0.99%" Foreground="#FFE2E4BB" FontSize="14" />
+						</StackPanel>
+
+						<DataGrid Name="ExplosivesGrid" ItemsSource="{Binding}" AutoGenerateColumns="False" Grid.Row="1" FontSize="16" >
+							<DataGrid.Columns>
+								<DataGridTextColumn Header="Explosive"  Binding="{Binding Name}" Width="150" IsReadOnly="True" Foreground="#FF111111"/>
+								<DataGridTextColumn Header="Damage"  Binding="{Binding GetTotalDamage}" Width="75" Foreground="#FF2C0400" IsReadOnly="True"/>
+								<DataGridTextColumn Header="Dest. Mod."  Binding="{Binding DestructionModifier}" Width="100" Foreground="#FF2B2700"/>
+								<DataGridTextColumn Header="Con. Mod."  Binding="{Binding ConcreteModifier}" Width="100"/>
+								<DataGridTextColumn Header="Full kill"  Binding="{Binding FullDestroyCount}" Width="80"/>
+								<DataGridTextColumn Header="Full kill concrete"  Binding="{Binding FullDestroyConcreteCount}" Width="125"/>
+								<DataGridTextColumn Header="DmgPerShot"  Binding="{Binding DmgPerShot}" Width="80"/>
+								<DataGridTextColumn Header="DmgPerShot concrete"  Binding="{Binding DmgPerShotConcrete}" Width="125"/>
+							</DataGrid.Columns>
+						</DataGrid>
+					</Grid>
+				</Grid>
+			</TabItem>
+			<TabItem>
+				<TabItem.Header>
+					<StackPanel Style="{StaticResource TabCanvasWrapper}" >
+						<Image Style="{StaticResource MenuIcon}" Source="Images/concrete.png"/>
+						<Label Style="{StaticResource MenuLabel}" Content="CONCRETE"></Label>
+					</StackPanel>
+				</TabItem.Header>
+				<Grid Background="#FF1E1E1E"/>
+			</TabItem>
+
+		</TabControl>
+		<Grid Grid.Row="1">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="1*" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="auto" />
+			</Grid.RowDefinitions>
+			<ScrollViewer Height="70" FlowDirection="LeftToRight">
+				<TextBlock x:Name="LogBox" Text="Output log" Margin="5,5,5,5" FontSize="13" Foreground="#FFBFFF00"/>
+			</ScrollViewer>
+		</Grid>
+	</Grid>
+</Window>

@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Images\V_Icon.ico</ApplicationIcon>
+    <Win32Resource />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\click.png" />
+    <None Remove="Images\concrete.png" />
+    <None Remove="Images\info.png" />
+    <None Remove="Images\shockwave.png" />
+    <None Remove="Images\V_Icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\click.png" />
+    <Resource Include="Images\concrete.png" />
+    <Resource Include="Images\info.png" />
+    <Resource Include="Images\shockwave.png" />
+    <Resource Include="Images\V_Icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Classes\Enums\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="264.58334mm"
+   height="264.58334mm"
+   viewBox="0 0 264.58335 264.58335"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="V_Logo.svg"
+   inkscape:export-filename="C:\VS_Projects\FoxHelper\Asset\V_Logo.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.38885733"
+     inkscape:cx="-353.60012"
+     inkscape:cy="425.60596"
+     inkscape:window-width="2560"
+     inkscape:window-height="1377"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Vrstva 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-23.134018,-44.534744)">
+    <circle
+       style="fill:#0044aa;stroke-width:0.471708"
+       id="path343"
+       cx="155.42569"
+       cy="176.82642"
+       inkscape:export-filename="C:\VS_Projects\FoxHelper\Asset\24.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       r="132.29167" />
+    <ellipse
+       style="fill:#ffffff;stroke-width:0.428113"
+       id="path367"
+       cx="153.65718"
+       cy="182.26633"
+       rx="112.01338"
+       ry="115.21177"
+       inkscape:export-filename="C:\VS_Projects\FoxHelper\Asset\24.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:#0055d4;stroke:none;stroke-width:0.433646px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 61.168096,129.75145 52.793504,12.59666 41.44008,100.77392 v 32.86104 h -17.03021 z"
+       id="path42-7-3"
+       sodipodi:nodetypes="cccccc"
+       inkscape:export-filename="C:\VS_Projects\FoxHelper\Asset\24.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:#003380;stroke:none;stroke-width:0.433646px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 249.63531,129.75145 -52.79359,12.59666 -41.44004,100.77392 v 32.86104 h 17.03018 z"
+       id="path42-0-1-8"
+       sodipodi:nodetypes="cccccc"
+       inkscape:export-filename="C:\VS_Projects\FoxHelper\Asset\24.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+  </g>
+</svg>

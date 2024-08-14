@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "drzzfHnLLBQ=",
+  "success": true,
+  "projectFilePath": "D:\\VS_Projects\\FoxHelper\\FoxHelper\\FoxHelper.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Poseidon\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
